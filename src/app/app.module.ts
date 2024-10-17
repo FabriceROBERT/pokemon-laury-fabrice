@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import {
-  HttpClient,
-  provideHttpClient,
-  withInterceptorsFromDi,
-} from '@angular/common/http';
+import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+export const routes: Routes = [
+  { path: '', component: PokemonListComponent }, // Route par défaut pour la liste
+  {
+    path: 'pokemon/:id',
+    component: PokemonDetailComponent,
+    outlet: 'pokemon-detail',
+  }, // Route pour les détails d'un Pokémon
+  { path: '**', component: NotFoundComponent },
+];
 
 @NgModule({
-  declarations: [],
-  imports: [BrowserModule, RouterModule.forRoot([])],
-  providers: [provideHttpClient(withInterceptorsFromDi())],
+  imports: [RouterModule.forRoot(routes), AppRoutingModule],
+  exports: [RouterModule],
 })
-export class AppModule {}
+export class AppRoutingModule {}

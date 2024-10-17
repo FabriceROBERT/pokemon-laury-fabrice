@@ -1,0 +1,42 @@
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.not-found-container h1 {
+  font-size: 3rem;
+  color: #ff0000;
+}
+
+.not-found-container p {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.not-found-container a {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.not-found-container a:hover {
+  background-color: #0056b3;
+}

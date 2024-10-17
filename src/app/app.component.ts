@@ -8,7 +8,7 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
   standalone: true,
   imports: [RouterOutlet, HeaderComponent, PokemonListComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'pokemon-laury-fabrice';

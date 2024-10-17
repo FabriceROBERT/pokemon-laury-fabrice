@@ -1,1 +1,13 @@
-<p>pokemon-list works!</p>
+<div class="pokemonGrid">
+  <div
+    class="box"
+    *ngFor="let pokemon of pokemons"
+    (click)="goToDetail(pokemon.id)"
+  >
+    <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}" />
+    <h3>{{ pokemon.name }}</h3>
+    <p><b>Type: </b>{{ pokemon.types[0].type.name }}</p>
+    <p><b>Height: </b> {{ pokemon.height }}</p>
+    <p><b>Weight: </b> {{ pokemon.weight }}</p>
+  </div>
+</div>
