@@ -7,14 +7,13 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class DataService {
-  private apiUrl = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=10';
+  private apiUrl = 'https://pokeapi.co/api/v2/pokemon';
 
   constructor(private http: HttpClient) {}
 
-  // Récupère une liste de Pokémon
-  getPokemon(): Observable<any> {
-    return this.http.get<any>(this.apiUrl).pipe(
-      catchError(this.handleError) // Gére les erreurs
+  getPokemon(offset: number = 0, limit: number = 10): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}?offset=${offset}&limit=${limit}`).pipe(
+      catchError(this.handleError)
     );
   }
 
