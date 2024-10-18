@@ -12,3 +12,12 @@
     <p><b>Weight: </b> {{ pokemon.weight }}</p>
   </div>
 </div>
+
+<mat-paginator
+  [length]="totalPokemons"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="onPageChange($event)"
+  aria-label="Select page"
+>
+</mat-paginator>
