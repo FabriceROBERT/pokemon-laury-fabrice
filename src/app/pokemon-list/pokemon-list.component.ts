@@ -45,4 +45,15 @@ export class PokemonListComponent implements OnInit {
     const offset = event.pageIndex * event.pageSize;
     this.loadPokemons(offset, event.pageSize);
   }
+
+  catchPokemon(pokemonId: number) {
+    let caughtPokemons: number[] = JSON.parse(localStorage.getItem('caughtPokemons') || '[]');
+    if (!caughtPokemons.includes(pokemonId)) {
+      caughtPokemons.push(pokemonId);
+      localStorage.setItem('caughtPokemons', JSON.stringify(caughtPokemons));
+      alert('Pokemon caught and added to your Pokedex!');
+    } else {
+      alert('You have already caught this Pokemon!');
+    }
+  }
 }
